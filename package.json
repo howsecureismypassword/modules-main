@@ -8,16 +8,19 @@
   },
   "author": "Small Hadron Collider",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/howsecureismypassword/main.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/howsecureismypassword/main.git"
   },
   "dependencies": {
+    "named-number": "git://github.com/howsecureismypassword/named-number.git#develop",
     "character-sets": "git://github.com/howsecureismypassword/character-sets.git#develop",
     "period": "git://github.com/howsecureismypassword/period.git#develop",
     "library": "git://github.com/howsecureismypassword/library.git#develop"
   },
   "devDependencies": {
-    "buster": "0.7.*"
+    "browserify": "8.*",
+    "buster": "0.7.*",
+    "uglify-js": "2.*"
   }
 }
