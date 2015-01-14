@@ -1,5 +1,5 @@
 {
-  "name": "Main",
+  "name": "hsimp",
   "version": "0.1.0",
   "description": "The main HSIMP file",
   "main": "main.js",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "character-sets": "git://github.com/howsecureismypassword/character-sets.git#develop",
+    "period": "git://github.com/howsecureismypassword/period.git#develop",
     "library": "git://github.com/howsecureismypassword/library.git#develop"
   },
   "devDependencies": {
