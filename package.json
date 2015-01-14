@@ -1,0 +1,22 @@
+{
+  "name": "Main",
+  "version": "0.1.0",
+  "description": "The main HSIMP file",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "author": "Small Hadron Collider",
+  "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/howsecureismypassword/main.git"
+  },
+  "dependencies": {
+    "character-sets": "git://github.com/howsecureismypassword/character-sets.git#develop",
+    "library": "git://github.com/howsecureismypassword/library.git#develop"
+  },
+  "devDependencies": {
+    "buster": "0.7.*"
+  }
+}
