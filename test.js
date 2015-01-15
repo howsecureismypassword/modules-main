@@ -10,11 +10,14 @@ var assert = buster.referee.assert;
  * Setup
  */
 var hsimp = require("./main");
+
 var periodDictionary = require("period/period-dictionary");
 var namedNumberDictionary = require("named-number/named-number-dictionary");
+var checkerDictionary = require("checker/checker-dictionary");
 
 hsimp.setPeriodDictionary(periodDictionary);
 hsimp.setNamedNumberDictionary(namedNumberDictionary);
+hsimp.setCheckerDictionary(checkerDictionary);
 
 hsimp.setOptions({
     "calculationsPerSecond": 1e10
@@ -65,6 +68,11 @@ buster.testCase("hsimp", {
     "Time": {
         "BowT1esAreC00l": function () {
             assert.equals(hsimp("BowT1esAreC00l").getTimeString(), "39 million years");
+        }
+    },
+    "Checks": {
+        "password": function () {
+            assert.equals(hsimp("password").getChecks().length, 4);
         }
     }
 });

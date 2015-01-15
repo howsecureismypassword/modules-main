@@ -13,9 +13,10 @@
     "url": "http://github.com/howsecureismypassword/main.git"
   },
   "dependencies": {
-    "named-number": "git://github.com/howsecureismypassword/named-number.git#develop",
-    "character-sets": "git://github.com/howsecureismypassword/character-sets.git#develop",
-    "period": "git://github.com/howsecureismypassword/period.git#develop",
+    "checker": "git://github.com/howsecureismypassword/modules-checker.git#develop",
+    "named-number": "git://github.com/howsecureismypassword/modules-named-number.git#develop",
+    "character-sets": "git://github.com/howsecureismypassword/modules-character-sets.git#develop",
+    "period": "git://github.com/howsecureismypassword/modules-period.git#develop",
     "library": "git://github.com/howsecureismypassword/library.git#develop"
   },
   "devDependencies": {
