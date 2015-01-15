@@ -11,7 +11,7 @@ var modules = {
 
 var defaults = {
     calculationsPerSecond: 1e10, // 10 billion
-    good: 3155760000, // 100 years
+    good: 31557600e6, // 1 million years
     ok: 31557600 // 1 year
 };
 
@@ -33,11 +33,6 @@ var hsimp = function (password) {
 
     var periodString = formattedPeriodLength + " " + periodName;
 
-    self.getPossibleCombinations = L.output(possibleCombinations);
-    self.getTimeInSeconds = L.output(timeInSeconds);
-    self.getString = L.output(periodString);
-    self.getTimeString = L.output(periodString);
-
     var checker =  modules.checker(password);
     var checks = checker.getChecks();
 
@@ -47,6 +42,8 @@ var hsimp = function (password) {
 
     if (checker.isInsecure()) {
         securityLevel = "insecure";
+        timeInSeconds = 0;
+        periodString = "Instantly";
     } else if (timeInSeconds >= options.good) {
         if (checker.hasWarnings()) {
             securityLevel = "ok";
@@ -58,6 +55,11 @@ var hsimp = function (password) {
     }
 
     self.getSecurityLevel = L.output(securityLevel);
+
+    self.getPossibleCombinations = L.output(possibleCombinations);
+    self.getTimeInSeconds = L.output(timeInSeconds);
+    self.getString = L.output(periodString);
+    self.getTimeString = L.output(periodString);
 
     return self;
 };

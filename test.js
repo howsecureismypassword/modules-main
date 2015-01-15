@@ -73,6 +73,12 @@ buster.testCase("hsimp", {
     "Checks": {
         "password": function () {
             assert.equals(hsimp("password").getChecks().length, 4);
+        },
+        "password string": function () {
+            assert.equals(hsimp("password").getString(), "Instantly");
+        },
+        "password time": function () {
+            assert.equals(hsimp("password").getTimeInSeconds(), 0);
         }
     },
     "Security Level": {
