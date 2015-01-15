@@ -74,5 +74,30 @@ buster.testCase("hsimp", {
         "password": function () {
             assert.equals(hsimp("password").getChecks().length, 4);
         }
+    },
+    "Security Level": {
+        "instant": {
+            "top10k": function () {
+                assert.equals(hsimp("password").getSecurityLevel(), "insecure");
+            }
+        },
+        "bad": {
+            "short": function () {
+                assert.equals(hsimp("dddddddddddd").getSecurityLevel(), "bad");
+            }
+        },
+        "ok": {
+            "short": function () {
+                assert.equals(hsimp("akduekfiejsiej").getSecurityLevel(), "ok");
+            },
+            "long with warning": function () {
+                assert.equals(hsimp("rrrhhhrrrhhhrrrhhhrrrhhh").getSecurityLevel(), "ok");
+            }
+        },
+        "good": {
+            "short": function () {
+                assert.equals(hsimp("ILikeToMoveItMoveItYeah!").getSecurityLevel(), "good");
+            }
+        }
     }
 });

@@ -10,7 +10,9 @@ var modules = {
 };
 
 var defaults = {
-    calculationsPerSecond: 1e10
+    calculationsPerSecond: 1e10, // 10 billion
+    good: 3155760000, // 100 years
+    ok: 31557600 // 1 year
 };
 
 var options = {};
@@ -40,6 +42,22 @@ var hsimp = function (password) {
     var checks = checker.getChecks();
 
     self.getChecks = L.output(checks);
+
+    var securityLevel = "bad";
+
+    if (checker.isInsecure()) {
+        securityLevel = "insecure";
+    } else if (timeInSeconds >= options.good) {
+        if (checker.hasWarnings()) {
+            securityLevel = "ok";
+        } else {
+            securityLevel = "good";
+        }
+    } else if (timeInSeconds >= options.ok) {
+        securityLevel = "ok";
+    }
+
+    self.getSecurityLevel = L.output(securityLevel);
 
     return self;
 };
