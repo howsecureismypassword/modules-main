@@ -1,5 +1,5 @@
 {
-  "name": "main",
+  "name": "hsimp-main",
   "version": "0.1.0",
   "description": "The main HSIMP file",
   "main": "main.js",
@@ -13,11 +13,11 @@
     "url": "http://github.com/howsecureismypassword/modules-main.git"
   },
   "dependencies": {
-    "checker": "git://github.com/howsecureismypassword/modules-checker.git#develop",
-    "named-number": "git://github.com/howsecureismypassword/modules-named-number.git#develop",
-    "character-sets": "git://github.com/howsecureismypassword/modules-character-sets.git#develop",
-    "period": "git://github.com/howsecureismypassword/modules-period.git#develop",
-    "library": "git://github.com/howsecureismypassword/modules-library.git#develop"
+    "hsimp-checker": "0.1.*",
+    "hsimp-named-number": "0.1.*",
+    "hsimp-character-sets": "0.1.*",
+    "hsimp-period": "0.1.*",
+    "hsimp-library": "0.1.*"
   },
   "devDependencies": {
     "browserify": "8.*",
