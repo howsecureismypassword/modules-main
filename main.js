@@ -1,12 +1,12 @@
 "use strict";
 
-var L = require("library");
+var L = require("hsimp-library");
 
 var modules = {
-    characterSets: require("character-sets"),
-    period: require("period"),
-    namedNumber: require("named-number"),
-    checker: require("checker")
+    characterSets: require("hsimp-character-sets"),
+    period: require("hsimp-period"),
+    namedNumber: require("hsimp-named-number"),
+    checker: require("hsimp-checker")
 };
 
 var defaults = {

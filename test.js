@@ -11,9 +11,9 @@ var assert = buster.referee.assert;
  */
 var hsimp = require("./main");
 
-var periodDictionary = require("period/period-dictionary");
-var namedNumberDictionary = require("named-number/named-number-dictionary");
-var checkerDictionary = require("checker/checker-dictionary");
+var periodDictionary = require("hsimp-period/period-dictionary");
+var namedNumberDictionary = require("hsimp-named-number/named-number-dictionary");
+var checkerDictionary = require("hsimp-checker/checker-dictionary");
 
 hsimp.setPeriodDictionary(periodDictionary);
 hsimp.setNamedNumberDictionary(namedNumberDictionary);
