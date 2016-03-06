@@ -14,10 +14,12 @@ var hsimp = require("./main");
 var periodDictionary = require("hsimp-period/period-dictionary");
 var namedNumberDictionary = require("hsimp-named-number/named-number-dictionary");
 var checkerDictionary = require("hsimp-checker/checker-dictionary");
+var checks = require("hsimp-checker/checks/patterns").concat(require("hsimp-checker/checks/top10k"));
 
 hsimp.setPeriodDictionary(periodDictionary);
 hsimp.setNamedNumberDictionary(namedNumberDictionary);
 hsimp.setCheckerDictionary(checkerDictionary);
+hsimp.setCheckerChecks(checks);
 
 hsimp.setOptions({
     "calculationsPerSecond": 1e10
