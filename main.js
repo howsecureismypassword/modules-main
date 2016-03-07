@@ -25,13 +25,17 @@ var hsimp = function (password) {
 
     var possibleCombinations = Math.pow(possibleCharacters, password.length);
     var timeInSeconds = possibleCombinations / options.calculationsPerSecond;
+    
+    try {
+        var period = modules.period(timeInSeconds);
+        var periodLength = period.getLength();
+        var formattedPeriodLength = modules.namedNumber(periodLength).getName();
+        var periodName = formattedPeriodLength === "1" ? period.getSingular() : period.getPlural();
 
-    var period = modules.period(timeInSeconds);
-    var periodLength = period.getLength();
-    var formattedPeriodLength = modules.namedNumber(periodLength).getName();
-    var periodName = formattedPeriodLength === "1" ? period.getSingular() : period.getPlural();
-
-    var periodString = formattedPeriodLength + " " + periodName;
+        var periodString = formattedPeriodLength + " " + periodName;
+    } catch (error) {
+        var periodString = "Forever";
+    }
 
     var checker =  modules.checker(password);
     var checks = checker.getChecks();

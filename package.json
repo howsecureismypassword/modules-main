@@ -1,6 +1,6 @@
 {
   "name": "hsimp-main",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "The main HSIMP file",
   "main": "main.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "hsimp-checker": "^0.1.6",
-    "hsimp-named-number": "0.1.*",
+    "hsimp-named-number": "^0.1.3",
     "hsimp-character-sets": "^0.1.3",
     "hsimp-period": "0.1.*",
     "hsimp-library": "0.1.*"
