@@ -19,7 +19,8 @@ var checks = require("hsimp-checker/checks/patterns").concat(require("hsimp-chec
 hsimp.setPeriodDictionary(periodDictionary);
 hsimp.setNamedNumberDictionary(namedNumberDictionary);
 hsimp.setCheckerDictionary(checkerDictionary);
-hsimp.setCheckerChecks(checks);
+
+hsimp.setCharacterSets(require("hsimp-character-sets/character-sets.json"));
 
 hsimp.setOptions({
     "calculationsPerSecond": 1e10

@@ -67,6 +67,8 @@ var hsimp = function (password) {
 hsimp.setPeriodDictionary = modules.period.setDictionary;
 hsimp.setNamedNumberDictionary = modules.namedNumber.setDictionary;
 hsimp.setCheckerDictionary = modules.checker.setDictionary;
+
+hsimp.setCharacterSets = modules.characterSets.setCharacterSets;
 hsimp.setCheckerChecks = modules.checker.setChecks;
 
 hsimp.setOptions = function (opts) {

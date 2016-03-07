@@ -15,7 +15,7 @@
   "dependencies": {
     "hsimp-checker": "^0.1.4",
     "hsimp-named-number": "0.1.*",
-    "hsimp-character-sets": "0.1.*",
+    "hsimp-character-sets": "^0.1.3",
     "hsimp-period": "0.1.*",
     "hsimp-library": "0.1.*"
   },
