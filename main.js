@@ -2,6 +2,8 @@
 
 var L = require("hsimp-library");
 
+var dictionary = null;
+
 var modules = {
     characterSets: require("hsimp-character-sets"),
     period: require("hsimp-period"),
@@ -18,6 +20,10 @@ var defaults = {
 var options = {};
 
 var hsimp = function (password) {
+    if (!dictionary) {
+        throw new Error("hsimp: dictionary not set");
+    }
+
     var self = {};
 
     var characterSets = modules.characterSets(password);
@@ -34,7 +40,7 @@ var hsimp = function (password) {
 
         var periodString = formattedPeriodLength + " " + periodName;
     } catch (error) {
-        var periodString = "Forever";
+        var periodString = dictionary.forever;
     }
 
     var checker =  modules.checker(password);
@@ -47,7 +53,7 @@ var hsimp = function (password) {
     if (checker.isInsecure()) {
         securityLevel = "insecure";
         timeInSeconds = 0;
-        periodString = "Instantly";
+        periodString = dictionary.instantly;
     } else if (timeInSeconds >= options.good) {
         if (checker.hasWarnings()) {
             securityLevel = "ok";
@@ -66,6 +72,10 @@ var hsimp = function (password) {
     self.getTimeString = L.output(periodString);
 
     return self;
+};
+
+hsimp.setDictionary = function (dic) {
+    dictionary = dic;
 };
 
 hsimp.setPeriodDictionary = modules.period.setDictionary;

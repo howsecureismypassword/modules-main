@@ -1,6 +1,6 @@
 {
   "name": "hsimp-main",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "The main HSIMP file",
   "main": "main.js",
   "scripts": {
