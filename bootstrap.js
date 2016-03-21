@@ -1,8 +1,10 @@
 module.exports = function (hsimp) {
+    var dictionary = require("./dictionary");
     var periodDictionary = require("hsimp-period/period-dictionary");
     var namedNumberDictionary = require("hsimp-named-number/named-number-dictionary");
     var checkerDictionary = require("hsimp-checker/checker-dictionary");
 
+    hsimp.setDictionary(dictionary);
     hsimp.setPeriodDictionary(periodDictionary);
     hsimp.setNamedNumberDictionary(namedNumberDictionary);
     hsimp.setCheckerDictionary(checkerDictionary);
