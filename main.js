@@ -19,7 +19,7 @@ var defaults = {
 
 var options = {};
 
-var hsimp = function (password) {
+var hsimp = L.memoize(function (password) {
     if (!dictionary) {
         throw new Error("hsimp: dictionary not set");
     }
@@ -72,7 +72,7 @@ var hsimp = function (password) {
     self.getTimeString = L.output(periodString);
 
     return self;
-};
+});
 
 hsimp.setDictionary = function (dic) {
     dictionary = dic;
